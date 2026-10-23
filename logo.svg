@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" fill="none">
+  <!-- Crisp White Badge Background matching N.png -->
+  <rect width="2000" height="2000" rx="280" fill="#FFFFFF" />
+
+  <!-- 1. Bottom-Left Deep Ocean Blue Vertical Stem & Wing (#004E7A) -->
+  <path
+    d="M676 474 C 890 635, 1110 825, 1260 985 C 1105 840, 955 735, 809 648 L 809 998 L 676 998 Z"
+    fill="#004E7A"
+  />
+
+  <!-- 2. Center Sweeping Diagonal Blade (#004E7A) -->
+  <path
+    d="M352 158 C 780 345, 1265 640, 1650 998 L 1406 998 C 1125 710, 770 415, 352 158 Z"
+    fill="#004E7A"
+  />
+
+  <!-- 3. Top-Right Cyan-Teal Wing & Vertical Stem (#0097B2) -->
+  <path
+    d="M655 176 C 890 275, 1095 375, 1273 470 L 1273 176 L 1404 176 L 1404 644 C 1185 485, 935 325, 655 176 Z"
+    fill="#0097B2"
+  />
+
+  <!-- 4. NOVAFLOW Bold Navy Wordmark -->
+  <text
+    x="1000"
+    y="1485"
+    text-anchor="middle"
+    fill="#080A52"
+    font-family="'Manrope', 'Plus Jakarta Sans', 'Arial Black', sans-serif"
+    font-size="255"
+    font-weight="900"
+    letter-spacing="6"
+  >
+    NOVAFLOW
+  </text>
+
+  <!-- 5. DIGITAL Spaced Sub-Wordmark -->
+  <text
+    x="1018"
+    y="1775"
+    text-anchor="middle"
+    fill="#14145A"
+    font-family="'Manrope', 'Plus Jakarta Sans', Arial, sans-serif"
+    font-size="132"
+    font-weight="800"
+    letter-spacing="42"
+  >
+    DIGITAL
+  </text>
+</svg>
