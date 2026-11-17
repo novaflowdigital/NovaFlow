@@ -1124,11 +1124,17 @@ body.soft-pastel-mode .button-primary {
 
 .ui-stat-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
+.audit-stat-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
 .ui-stat-box {
+  min-width: 0;
   padding: 10px 12px;
   border-radius: 12px;
   background: var(--surface-inset);
@@ -1157,12 +1163,13 @@ body.soft-pastel-mode .button-primary {
 
 .estimator-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 28px;
   align-items: stretch;
 }
 
 .estimator-controls {
+  min-width: 0;
   padding: 34px;
   border-radius: 28px;
   background: var(--paper);
@@ -1184,17 +1191,18 @@ body.soft-pastel-mode .button-primary {
 
 .estimator-options-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
 .estimator-scale-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
 .est-option-btn {
+  min-width: 0;
   text-align: left;
   padding: 14px 16px;
   border-radius: 16px;
@@ -1222,6 +1230,7 @@ body.soft-pastel-mode .button-primary {
 }
 
 .estimator-summary-card {
+  min-width: 0;
   padding: 34px;
   border-radius: 28px;
   background: linear-gradient(155deg, var(--lavender), var(--lavender-end));
@@ -1236,6 +1245,8 @@ body.soft-pastel-mode .button-primary {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
   font-size: 11px;
@@ -1256,7 +1267,8 @@ body.soft-pastel-mode .button-primary {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px 12px;
 }
 
 .est-metric-row span {
@@ -1280,7 +1292,7 @@ body.soft-pastel-mode .button-primary {
   font-size: 13px;
   font-weight: 600;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -1288,6 +1300,7 @@ body.soft-pastel-mode .button-primary {
   content: "✓";
   color: var(--mint-text);
   font-weight: 800;
+  flex-shrink: 0;
 }
 
 /* PROCESS, ABOUT, FAQ, CONTACT, FOOTER */
@@ -1297,7 +1310,7 @@ body.soft-pastel-mode .button-primary {
 
 .process-item {
   display: grid;
-  grid-template-columns: 80px 1fr 48px;
+  grid-template-columns: 80px minmax(0, 1fr) 48px;
   align-items: center;
   gap: 36px;
   padding: 32px 0;
@@ -1312,7 +1325,7 @@ body.soft-pastel-mode .button-primary {
 
 .process-main {
   display: grid;
-  grid-template-columns: 0.45fr 1fr;
+  grid-template-columns: minmax(0, 0.45fr) minmax(0, 1fr);
   gap: 40px;
   align-items: center;
 }
@@ -1355,6 +1368,8 @@ body.soft-pastel-mode .button-primary {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .about-index {
@@ -1365,7 +1380,7 @@ body.soft-pastel-mode .button-primary {
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 56px;
   margin-top: 48px;
 }
@@ -1373,6 +1388,10 @@ body.soft-pastel-mode .button-primary {
 .about-content h2 {
   font-size: clamp(36px, 4.6vw, 64px);
   line-height: 1;
+}
+
+.about-copy {
+  min-width: 0;
 }
 
 .about-copy p {
@@ -1409,6 +1428,7 @@ body.soft-pastel-mode .button-primary {
 }
 
 .founder-card {
+  min-width: 0;
   padding: 34px;
   border-radius: 28px;
   background: linear-gradient(155deg, var(--mint), var(--mint-end));
@@ -1418,6 +1438,8 @@ body.soft-pastel-mode .button-primary {
 .founder-top {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
   font-size: 11px;
   font-weight: 800;
   color: var(--muted);
@@ -1458,8 +1480,12 @@ body.soft-pastel-mode .button-primary {
 
 .faq-layout {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: 56px;
+}
+
+.faq-intro {
+  min-width: 0;
 }
 
 .faq-intro h2 {
@@ -1478,6 +1504,7 @@ body.soft-pastel-mode .button-primary {
 }
 
 .faq-list {
+  min-width: 0;
   display: grid;
   gap: 14px;
 }
@@ -1509,6 +1536,7 @@ body.soft-pastel-mode .button-primary {
 .faq-icon {
   width: 32px;
   height: 32px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--lavender);
   border: 1px solid var(--lavender-strong);
@@ -1524,7 +1552,7 @@ body.soft-pastel-mode .button-primary {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 260px;
+  max-height: 320px;
 }
 
 .faq-answer p {
@@ -1535,44 +1563,80 @@ body.soft-pastel-mode .button-primary {
 
 .contact-card {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 48px;
   padding: 48px;
   border-radius: 32px;
   background: linear-gradient(155deg, var(--blush), var(--blush-end));
   border: 1.5px solid var(--blush-strong);
+  overflow: hidden;
+}
+
+.contact-intro {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .contact-intro h2 {
   margin-top: 22px;
-  font-size: clamp(36px, 4.5vw, 60px);
-  line-height: 1;
+  font-size: clamp(32px, 4.5vw, 60px);
+  line-height: 1.04;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-intro > p {
   margin-top: 18px;
   color: var(--muted);
+  overflow-wrap: break-word;
 }
 
 .direct-contact-cards {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
   margin-top: 26px;
+  width: 100%;
 }
 
 .direct-channel-card {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
+  gap: 14px;
+  padding: 16px 18px;
   border-radius: 18px;
   background: var(--surface-inset);
   border: 1px solid var(--line-strong);
+  width: 100%;
+  min-width: 0;
+}
+
+.direct-channel-card > div:not(.channel-icon) {
+  min-width: 0;
+  flex: 1;
+}
+
+.direct-channel-card small {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.direct-channel-card strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .channel-icon {
   width: 44px;
   height: 44px;
+  flex-shrink: 0;
   border-radius: 14px;
   background: var(--paper-elevated);
   display: grid;
@@ -1582,10 +1646,14 @@ body.soft-pastel-mode .button-primary {
 
 .channel-arrow {
   margin-left: auto;
+  flex-shrink: 0;
   font-weight: 800;
 }
 
 .contact-form-wrapper {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
   padding: 32px;
   border-radius: 24px;
   background: var(--surface-inset);
@@ -1596,8 +1664,18 @@ body.soft-pastel-mode .button-primary {
   margin-bottom: 20px;
 }
 
+.form-header p {
+  overflow-wrap: anywhere;
+}
+
+.contact-form {
+  width: 100%;
+  min-width: 0;
+}
+
 .contact-form label {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
   margin-bottom: 16px;
   font-size: 11px;
@@ -1605,18 +1683,24 @@ body.soft-pastel-mode .button-primary {
   text-transform: uppercase;
   letter-spacing: 0.09em;
   color: var(--lavender-text);
+  min-width: 0;
+  width: 100%;
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 14px;
+  width: 100%;
+  min-width: 0;
 }
 
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 14px 16px;
   border: 1px solid var(--line-strong);
   border-radius: 12px;
@@ -1624,6 +1708,7 @@ body.soft-pastel-mode .button-primary {
   background: var(--paper);
   color: var(--ink);
   font-size: 14px;
+  text-overflow: ellipsis;
 }
 
 .contact-form textarea {
@@ -1632,8 +1717,9 @@ body.soft-pastel-mode .button-primary {
 
 .form-submit-group {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
+  width: 100%;
 }
 
 .button-submit {
@@ -1654,6 +1740,7 @@ body.soft-pastel-mode .button-primary {
   color: var(--muted);
   font-size: 12px;
   text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .email-receipt-box {
@@ -1693,7 +1780,7 @@ body.soft-pastel-mode .button-primary {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   padding-bottom: 36px;
   border-bottom: 1px solid var(--line);
@@ -1707,7 +1794,7 @@ body.soft-pastel-mode .button-primary {
 
 .footer-bottom {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   padding-top: 24px;
   color: var(--muted);
@@ -1717,6 +1804,7 @@ body.soft-pastel-mode .button-primary {
 .footer-links {
   justify-self: end;
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
 }
 
@@ -1749,6 +1837,8 @@ body.soft-pastel-mode .button-primary {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
+  max-width: calc(100vw - 32px);
+  text-align: center;
 }
 
 .toast-notification.show {
@@ -1757,24 +1847,30 @@ body.soft-pastel-mode .button-primary {
 }
 
 @media (max-width: 1080px) {
+  .desktop-nav {
+    gap: 16px;
+  }
+  .nav-whatsapp {
+    display: none;
+  }
   .hero-grid,
   .estimator-grid,
   .about-content,
   .faq-layout,
   .contact-card,
   .client-clarity-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
   }
 }
 
 @media (max-width: 840px) {
   .section {
-    padding: 76px 0;
+    padding: 68px 0;
   }
   .container,
   .nav-container {
-    width: calc(100% - 32px);
+    width: calc(100% - 28px);
   }
   .desktop-nav,
   .nav-actions,
@@ -1783,6 +1879,7 @@ body.soft-pastel-mode .button-primary {
   }
   .menu-button {
     display: block;
+    flex-shrink: 0;
   }
   .mobile-menu {
     position: fixed;
@@ -1791,10 +1888,12 @@ body.soft-pastel-mode .button-primary {
     right: 0;
     background: var(--paper);
     border-bottom: 1px solid var(--line-strong);
-    padding: 24px;
+    padding: 22px 18px;
     display: none;
     flex-direction: column;
     gap: 20px;
+    max-height: calc(100dvh - 82px);
+    overflow-y: auto;
   }
   .mobile-menu.open {
     display: flex;
@@ -1803,26 +1902,198 @@ body.soft-pastel-mode .button-primary {
     display: grid;
     gap: 14px;
   }
+  .mobile-menu-links a {
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-menu-links a span {
+    font-size: 12px;
+    color: var(--purple);
+  }
+  .hero {
+    padding-top: 112px;
+    padding-bottom: 56px;
+    min-height: auto;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 42px);
+    line-height: 1.08;
+  }
+  .hero-description {
+    font-size: 15px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .button {
+    width: 100%;
+  }
+  .hero-metrics {
+    gap: 14px;
+  }
+  .metric-divider {
+    display: none;
+  }
+  .hero-visual {
+    min-height: auto;
+  }
+  .visual-card {
+    width: 100%;
+    min-height: auto;
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+  .visual-top,
+  .visual-bottom {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-scroll {
+    display: none;
+  }
+  .section-heading {
+    margin-bottom: 32px;
+  }
+  .section-heading h2,
+  .about-content h2,
+  .faq-intro h2,
+  .contact-intro h2 {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.12;
+  }
+  .work-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
   .services-grid,
   .projects-grid,
+  .founders-grid,
   .form-row,
   .form-submit-group,
   .estimator-options-grid,
   .estimator-scale-grid,
   .client-clarity-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ui-stat-row,
+  .audit-stat-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .service-peach-wide {
     grid-column: span 1;
   }
   .service-peach-wide .service-content ul {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .service-card,
+  .clarity-card,
+  .estimator-controls,
+  .estimator-summary-card,
+  .transform-shell,
+  .about-card,
+  .founder-card,
+  .contact-card {
+    padding: 22px 16px;
+    border-radius: 22px;
+    min-height: auto;
+  }
+  .service-card-top,
+  .service-footer,
+  .clarity-meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .bp-sitemap-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .bp-ai-badge {
+    white-space: normal;
+  }
+  .transform-slider-labels {
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 11px;
+  }
+  .project-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 16px 0;
+  }
+  .project-preview {
+    margin: 12px 14px;
+    padding: 16px !important;
+  }
+  .project-info {
+    padding: 6px 16px 18px;
+  }
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .project-actions .button,
+  .project-actions .project-live-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .button {
+    white-space: normal;
+    text-align: center;
+    padding: 12px 18px;
+    line-height: 1.3;
+  }
+  .contact-form-wrapper {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+  .direct-channel-card {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+  .direct-channel-card strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .faq-question {
+    padding: 18px 16px;
+    font-size: 15px;
+  }
+  .faq-answer p {
+    padding: 0 16px 18px;
+    font-size: 14px;
   }
   .process-item,
   .process-main,
   .footer-top,
   .footer-bottom {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
   }
+  .footer-top,
+  .footer-bottom {
+    text-align: center;
+  }
+  .footer-brand,
+  .back-top,
+  .footer-links {
+    justify-self: center;
+    justify-content: center;
+  }
 }
+
